@@ -23,6 +23,7 @@ createRoot(document.getElementById('root')!).render(
         pauseOnHover
         theme="light"
         transition={Bounce}
+        limit={5}
       />
         <Router>
           <App />

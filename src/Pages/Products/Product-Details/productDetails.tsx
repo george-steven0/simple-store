@@ -81,11 +81,7 @@ const ProductDetails = () => {
         }
         dispatch(addToCart(data))
     }
-    
-    const cart = useAppSelector(state=>state?.cart)
 
-    console.log(cart);
-    
     return ( 
         <section className="product-details-wrapper">
             <div className="breadcrumb-wrapper">

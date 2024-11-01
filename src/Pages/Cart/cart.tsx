@@ -12,9 +12,7 @@ const breadCrumbLinks = [
 const Cart = () => {
 
     const cart = useAppSelector(state=>state?.cart)
-    
-    console.log(cart);
-    
+        
     return ( 
         <section className="cart-wrapper">
             <div className="breadcrumb-wrapper">

@@ -58,8 +58,8 @@ const Products = React.memo(() => {
 
                                 <MenuItem value={''} disabled>Category</MenuItem>
                                 <MenuItem value={''}>All</MenuItem>
-                                {products?.category?.map( (category)=>(
-                                <MenuItem value={category} className="capitalize">{category}</MenuItem>
+                                {products?.category?.map( (category,index)=>(
+                                <MenuItem key={index} value={category} className="capitalize">{category}</MenuItem>
 
                             ) )}
                         </Select>

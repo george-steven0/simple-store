@@ -16,10 +16,10 @@ const cartSlice = createSlice({
             const existingItem = state.cartItems.find(i => i.id === item.id);
             if(existingItem){
                 existingItem.qty = item.qty
-                toast.success('Item quantity increased' )
+                toast.success('Item quantity increased' ,{toastId : 'increaseByQty'})
             } else{
                 state.cartItems.push({...item})
-                toast.success('Item add to cart' )
+                toast.success('Item add to cart',{toastId : 'addNewCart'} )
             }
             state.total = state.cartItems.length !==0 ? 
                 state.cartItems.reduce((acc,item)=>{
@@ -31,7 +31,7 @@ const cartSlice = createSlice({
             const existingItem = state.cartItems.find(i => i.id === item?.id);
             if(existingItem){
                 existingItem.qty = existingItem.qty + 1
-                toast.success('Item quantity Increase' )
+                toast.success('Item quantity Increase' ,{toastId : 'increase'})
             }
             state.total = state.cartItems.length!==0? 
                 state.cartItems.reduce((acc,item)=>{
@@ -43,9 +43,9 @@ const cartSlice = createSlice({
             const existingItem = state.cartItems.find(i => i.id === item?.id);
             if(existingItem && existingItem.qty > 1){
                 existingItem.qty = existingItem.qty - 1
-                toast.success('Item quantity decreased' )
+                toast.success('Item quantity decreased',{toastId : 'decrease'} )
             } else{
-                toast.warn('Item quantity cannot be decreased further' )
+                toast.warn('Item quantity cannot be decreased further',{toastId : 'warning'} )
             }
             state.total = state.cartItems.length!==0? 
                 state.cartItems.reduce((acc,item)=>{
