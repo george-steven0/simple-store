@@ -1,0 +1,52 @@
+$mainColor : #2577E7;
+$mainDark : #555;
+
+.nav-links-wrapper{
+
+    ul{
+
+        li{
+            &:not(&:last-child){
+
+                a{
+                    position: relative;
+    
+                    &.active{
+                        color: $mainColor;
+                    }
+    
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width: 0%;
+                        height: 2px;
+                        background-color: $mainColor;
+                        bottom: 0;
+                        right: 0;
+                        transition: width .3s ease-in-out;
+                    }
+    
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        width: 0%;
+                        height: 2px;
+                        background-color: $mainColor;
+                        bottom: 0;
+                        left: 0;
+                        transition: width .3s ease-in-out;
+                    }
+    
+                    &:hover::after,
+                    &.active::after,
+                    &:hover::before,
+                    &.active::before{
+                        width: 50%;
+                    }
+    
+                }
+            }
+            
+        }
+    }
+}

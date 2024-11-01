@@ -1,0 +1,8 @@
+body{
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.breadcrumb{
+    background: url('./assets/imgs/breadcumb.jpg') no-repeat center top;
+}
