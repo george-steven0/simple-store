@@ -8,7 +8,7 @@ import { BiSearchAlt, BiStoreAlt } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai"; 
 import { Link, NavLink, useLocation } from "react-router-dom";
 import './navbar.scss'
-import { Button, IconButton } from "@mui/material";
+import { Backdrop, Button, IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import SearchModal from "../../../Common/Search/searchModal";
 import { useAppSelector } from "../../../Redux/TsHooks";
@@ -41,7 +41,7 @@ const Navbar = () => {
     
 
     return ( 
-        <div className={`header-nav-wrapper top-0 ${toggleNav ? 'z-10 fixed' : '-z-10 absolute'} md:static h-screen md:h-fit `}>
+        <div className={`header-nav-wrapper top-0 ${toggleNav ? 'z-50 fixed' : '-z-10 absolute'} md:static h-screen md:h-fit `}>
 
                 { !toggleNav ?
                     <IconButton onClick={handleToggleNav} className="absolute top-2 z-[90] left-2 z-8 text-mainColor text-2xl block md:hidden w-fit cursor-pointer">
@@ -51,7 +51,7 @@ const Navbar = () => {
                     : null
                 }
 
-            <nav className={` ${toggleNav ? 'left-0' : '-left-full md:left-0'} transition-all relative max-w-[350px] md:max-w-full h-full md:h-auto md:flex flex-wrap [&>div]:basis-full [&>div]:md:basis-auto md:flex-nowrap items-center justify-between bg-white shadow-md md:shadow-sm py-3 px-4 `}>
+            <nav className={` ${toggleNav ? 'left-0' : '-left-full md:left-0'} z-50 transition-all relative max-w-[350px] md:max-w-full h-full md:h-auto md:flex flex-wrap [&>div]:basis-full [&>div]:md:basis-auto md:flex-nowrap items-center justify-between bg-white shadow-md md:shadow-sm py-3 px-4 `}>
                 
                 <IconButton onClick={handleToggleNav} className="absolute top-1 right-2 z-10 text-mainColor text-2xl block md:hidden w-fit cursor-pointer">
                     <AiOutlineClose />
@@ -101,6 +101,8 @@ const Navbar = () => {
                     </ul>
                 </div>
             </nav>
+
+            {toggleNav ? <Backdrop open={toggleNav} onClick={()=>settoggleNav(!toggleNav)} className="z-40 backdrop-blur-sm" /> : null}
 
             <SearchModal open={openSearch} close={handleCloseSearch} />
         </div>
