@@ -10,6 +10,7 @@ import Loading from "../../../Components/Common/Overlay/loading";
 import { Button, IconButton, Rating } from "@mui/material";
 import ProductTabs from "./productDetailsTabs/productTabs";
 import { addToCart } from "../../../Components/Redux/Slices/Cart/cart";
+import ImageMagnifier from "../../../Components/Common/Magnifer/magnifer";
 
 const breadCrumbLinks = [
     {id:1,title:'home',path:'/'},
@@ -89,8 +90,9 @@ const ProductDetails = () => {
             </div>
 
             <div className="product-details-container flex flex-wrap gap-6 items-start mt-4 max-w-[90%] m-auto bg-white p-4 rounded-md [&>section]:md:basis-[48%]">
-                <section className="product-image h-[500px] basis-full">
-                    <img src={singleProduct?.image} alt={singleProduct?.title} className="w-full h-full object-contain" />
+                <section className="product-image h-[500px] basis-full relative">
+                    {/* <img src={singleProduct?.image} alt={singleProduct?.title} className={`w-full h-full object-contain`} /> */}
+                    <ImageMagnifier src={singleProduct?.image || ''} width={'100%'} height={'100%'} magnifierHeight={250} magnifierWidth={250} zoomLevel={2} />
                 </section>
 
                 <section className="product-info basis-full">
