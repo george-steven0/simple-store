@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 type magniferProps = {
     src : string,
-    width : number | string,
-    height : number | string,
+    // width : number | string,
+    // height : number | string,
     magnifierHeight : number
     magnifierWidth : number,
     zoomLevel : number,
@@ -12,8 +12,8 @@ type magniferProps = {
 }
 const ImageMagnifier = ({
     src,
-    width,
-    height,
+    // width,
+    // height,
     alt,
     magnifierHeight = 150,
     magnifierWidth = 150,
@@ -48,12 +48,12 @@ const ImageMagnifier = ({
         setXY([x, y]);
     };
 
-    return <div className="relative inline-block">
+    return <div className="relative inline-block w-full h-full">
         <img
             src={src}
             className={className}
-            width={width}
-            height={height}
+            // width={width}
+            // height={height}
             alt={alt}
             onMouseEnter={(e) => mouseEnter(e)}
             onMouseLeave={(e) => mouseLeave(e)}
@@ -63,6 +63,7 @@ const ImageMagnifier = ({
             style={{
                 display: showMagnifier ? '' : 'none',
                 position: 'absolute',
+                zIndex : '9999',
                 pointerEvents: 'none',
                 height: `${magnifierHeight}px`,
                 width: `${magnifierWidth}px`,

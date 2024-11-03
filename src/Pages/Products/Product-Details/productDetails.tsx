@@ -92,7 +92,7 @@ const ProductDetails = () => {
             <div className="product-details-container flex flex-wrap gap-6 items-start mt-4 max-w-[90%] m-auto bg-white p-4 rounded-md [&>section]:md:basis-[48%]">
                 <section className="product-image h-[500px] basis-full relative">
                     {/* <img src={singleProduct?.image} alt={singleProduct?.title} className={`w-full h-full object-contain`} /> */}
-                    <ImageMagnifier src={singleProduct?.image || ''} width={'100%'} height={'100%'} magnifierHeight={250} magnifierWidth={250} zoomLevel={2} />
+                    <ImageMagnifier src={singleProduct?.image || ''} className="w-full h-full" magnifierHeight={250} magnifierWidth={250} zoomLevel={3} />
                 </section>
 
                 <section className="product-info basis-full">
