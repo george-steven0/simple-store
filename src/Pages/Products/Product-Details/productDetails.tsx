@@ -43,7 +43,7 @@ const ProductDetails = () => {
 
     useEffect(() => {
         setRate(singleProduct&&singleProduct?.rating?.rate);
-    }, [singleProduct, rate])
+    }, [singleProduct])
         
     
     // handle qty of items
@@ -82,6 +82,9 @@ const ProductDetails = () => {
         }
         dispatch(addToCart(data))
     }
+
+    console.log(rate);
+    
 
     return ( 
         <section className="product-details-wrapper">
