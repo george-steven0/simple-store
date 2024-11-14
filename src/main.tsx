@@ -7,6 +7,8 @@ import { Bounce, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Provider } from 'react-redux'
 import { store } from './Components/Redux/store';
+import { PersistGate } from 'redux-persist/integration/react'
+import {persistor} from './Components/Redux/store.ts'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -26,7 +28,9 @@ createRoot(document.getElementById('root')!).render(
         limit={5}
       />
         <Router>
-          <App />
+          <PersistGate persistor={persistor} loading={null}>
+            <App />
+          </PersistGate>
         </Router>
     </Provider>
   </StrictMode>,
