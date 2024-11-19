@@ -61,7 +61,7 @@ const Navbar = () => {
                     <Link to='/' className="flex items-center gap-x-2">
                         <span className="text-6xl text-mainColor"><FaStore /></span>
                         <div className="block md:hidden lg:block">
-                            <p className="text-xl text-mainColor font-bold">E-Commerce</p>
+                            <p className="text-xl text-mainColor font-bold">Store</p>
                             <p className="text-xs text-[#696969] font-semibold">Shop all you want</p>
                         </div>
                     </Link>

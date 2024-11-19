@@ -6,7 +6,7 @@ type getProductsProps = {
     category? : string | null
 }
 export const getProducts = createAsyncThunk('getProducts-Function', async ({category}:getProductsProps)=>{
-    const url = `https://fakestoreapi.com/products/${category ? `category/${category}` : ''}`
+    const url = `/products/${category ? `category/${category}` : ''}`
     
     try{
         const response = await axios.get(url)
@@ -18,7 +18,7 @@ export const getProducts = createAsyncThunk('getProducts-Function', async ({cate
 });
 
 export const getCategory = createAsyncThunk('getCategory-Function', async ()=>{
-    const url = 'https://fakestoreapi.com/products/categories'
+    const url = '/products/categories'
 
     try{
         const response = await axios.get(url)
@@ -32,7 +32,7 @@ type getSingleProductsProps = {
     id? : number | string
 }
 export const getSingleProduct = createAsyncThunk('getSingleProduct-Function', async ({id}:getSingleProductsProps)=>{
-    const url = `https://fakestoreapi.com/products/${id}`
+    const url = `/products/${id}`
     
     try{
         const response = await axios.get(url)

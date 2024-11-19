@@ -9,6 +9,10 @@ import { Provider } from 'react-redux'
 import { store } from './Components/Redux/store';
 import { PersistGate } from 'redux-persist/integration/react'
 import {persistor} from './Components/Redux/store.ts'
+import axios from 'axios'
+import { HelmetProvider } from 'react-helmet-async';
+
+axios.defaults.baseURL = 'https://fakestoreapi.com'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -27,11 +31,13 @@ createRoot(document.getElementById('root')!).render(
         transition={Bounce}
         limit={5}
       />
+      <HelmetProvider>
         <Router>
           <PersistGate persistor={persistor} loading={null}>
-            <App />
+              <App />
           </PersistGate>
         </Router>
+      </HelmetProvider>
     </Provider>
   </StrictMode>,
 )
